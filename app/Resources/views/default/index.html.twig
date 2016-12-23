@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="blog-list">
+        {% for blog in blogs %}
+            <article class="blog col-lg-8 col-md-8 pull-center">
+                <header>
+                    <h2><a href="{{ path('AppBundle_blog_show', { 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>
+                </header>
+
+                <div class="snippet">
+                    <p>{{ blog.content|nl2br|striptags|truncate(450) }}</p>
+                </div>
+
+                <footer class="meta">
+                    <p>Posted by <span class="highlight">{{ blog.author }}</span> at {{ blog.created|date('Y.m.d H:i:s') }}</p>
+                </footer>
+            </article>
+        {% else %}
+            <p>There are no blog entries</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

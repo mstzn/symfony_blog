@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block body %}
+    <article class="blog col-lg-8 col-md-8 pull-center">
+        <header>
+            <h2>{{ blog.title }}</h2>
+        </header>
+
+        <div class="snippet">
+            <p>{{ blog.content(500) }}</p>
+        </div>
+
+        <footer class="meta">
+            <p>Posted by <span class="highlight">{{ blog.author }}</span> at {{ blog.created|date('Y.m.d H:i:s') }}</p>
+        </footer>
+    </article>
+{% endblock %}

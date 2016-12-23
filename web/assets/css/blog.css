@@ -1,0 +1,44 @@
+.blog-list {
+
+}
+
+.blog-list .blog {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+}
+
+.login-form {
+
+}
+
+.login-form input[type=text], .login-form input[type=password] {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-form input[type=submit] {
+    margin-top: 20px;
+    display: block;
+    float: right;
+}
+
+.pull-center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.logo a {
+    color: #333;
+    font-size: 80px;
+    text-decoration: none;
+}
+
+.header {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+}
