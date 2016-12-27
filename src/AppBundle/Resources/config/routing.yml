@@ -11,3 +11,9 @@ AppBundle_blog_show:
     requirements:
         _method:  GET
         id: \d+
+
+AppBundle_admin:
+    pattern:  /admin/
+    defaults: { _controller: AppBundle:Default:admin }
+    requirements:
+        _method:  GET

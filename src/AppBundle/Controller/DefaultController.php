@@ -25,7 +25,8 @@ class DefaultController extends Controller
 
     }
 
-    public function loginAction() {
+    public function loginAction()
+    {
 
         return $this->render('default/login.html.twig', array());
     }
@@ -41,7 +42,16 @@ class DefaultController extends Controller
         }
 
         return $this->render('default/blog.html.twig', array(
-            'blog'      => $blog,
+            'blog' => $blog,
         ));
+    }
+
+    public function adminAction()
+    {
+        $securityContext = $this->container->get('security.authorization_checker');
+        if (!$securityContext->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException('You not authorized to acces this page');
+        }
+        return $this->render('default/admin.html.twig', array());
     }
 }
